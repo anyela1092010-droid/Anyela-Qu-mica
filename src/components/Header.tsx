@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Sparkles, History, Settings, ExternalLink, GraduationCap, Activity, Palette } from 'lucide-react';
+import { Flame, History, Settings, Activity, Palette } from 'lucide-react';
 
 interface HeaderProps {
   onOpenHistory: () => void;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { AcademicGuideResources } from '../types';
-import { X, Trash2, ArrowRight, History, Calendar, ExternalLink, BookOpen } from 'lucide-react';
+import { X, Trash2, ArrowRight, History, Calendar, BookOpen } from 'lucide-react';
 
 interface HistoryDrawerProps {
   isOpen: boolean;

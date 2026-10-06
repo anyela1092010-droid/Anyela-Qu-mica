@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flame, Sparkles, BookCheck, Eye, EyeOff, Layers, Activity, GraduationCap } from 'lucide-react';
+import { Flame, Eye, EyeOff, Layers, Activity, GraduationCap } from 'lucide-react';
 import { ReactorTypeInfo } from '../data/reactorsCurriculum';
 
 interface PilotPlantHeroProps {

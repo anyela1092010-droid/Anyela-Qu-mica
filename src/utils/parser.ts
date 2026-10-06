@@ -7,7 +7,6 @@ import { ChemicalResource, AcademicGuideResources } from '../types';
  *   - Enlace: [URL]
  */
 export function parseMarkdownResources(markdown: string, fallbackTopic: string = ''): AcademicGuideResources {
-  const lines = markdown.split('\n');
   let topic = fallbackTopic;
   const resources: ChemicalResource[] = [];
 

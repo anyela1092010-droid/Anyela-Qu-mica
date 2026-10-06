@@ -1,6 +1,6 @@
 import React from 'react';
 import { REACTOR_TYPES_DATA, ReactorTypeInfo } from '../data/reactorsCurriculum';
-import { Timer, RotateCw, ArrowRightCircle, Boxes, Flame, Sparkles, Check, ChevronRight, BookOpen, Clock, Activity } from 'lucide-react';
+import { Timer, RotateCw, ArrowRightCircle, Boxes, Flame, Check, ChevronRight, BookOpen, Activity } from 'lucide-react';
 
 interface ReactorWhiteboardProps {
   selectedReactorId: string;

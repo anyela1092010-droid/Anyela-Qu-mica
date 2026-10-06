@@ -1,4 +1,4 @@
-import { TopicCategory, ChemicalResource } from '../types';
+import { TopicCategory } from '../types';
 
 export const CURRICULUM_CATEGORIES: TopicCategory[] = [
   {

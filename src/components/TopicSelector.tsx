@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { REACTOR_TYPES_DATA, ReactorTypeInfo } from '../data/reactorsCurriculum';
-import { Sparkles, Timer, RotateCw, ArrowRightCircle, Boxes, Flame, Filter, Check, SlidersHorizontal, BookOpen, Layers } from 'lucide-react';
+import { Sparkles, Flame, Check, SlidersHorizontal, Layers } from 'lucide-react';
 
 interface TopicSelectorProps {
   currentTopic: string;

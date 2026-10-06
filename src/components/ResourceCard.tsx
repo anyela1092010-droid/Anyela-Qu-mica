@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ChemicalResource } from '../types';
-import { ExternalLink, RefreshCw, FileText, Video, Building2, CheckCircle2, AlertCircle, Edit3, Save, X, Globe } from 'lucide-react';
+import { ExternalLink, RefreshCw, FileText, Video, Building2, Edit3, Save, X, Globe } from 'lucide-react';
 
 interface ResourceCardProps {
   resource: ChemicalResource;

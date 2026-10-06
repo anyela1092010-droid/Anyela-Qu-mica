@@ -28,7 +28,7 @@ const ai = apiKey
   : null;
 
 // API Health / Config
-app.get('/api/health', (req, res) => {
+app.get('/api/health', (_req, res) => {
   res.json({
     status: 'ok',
     hasApiKey: !!apiKey,
@@ -49,7 +49,8 @@ app.post('/api/generate-resources', async (req, res) => {
   const cleanTopic = (topic || '').trim();
 
   if (!cleanTopic) {
-    return res.status(400).json({ error: 'El parámetro topic [TEMA_CLASE] es obligatorio.' });
+    res.status(400).json({ error: 'El parámetro topic [TEMA_CLASE] es obligatorio.' });
+    return;
   }
 
   try {
@@ -127,6 +128,7 @@ Asegúrate de incluir exactamente 3 viñetas con títulos precisos, descripcione
       webSources,
       timestamp: new Date().toISOString(),
     });
+    return;
   } catch (error: any) {
     console.warn('Gemini API call failed or rate-limited (e.g. 429 quota), using resilient chemical engineering knowledge engine:', error.message);
     
@@ -140,6 +142,7 @@ Asegúrate de incluir exactamente 3 viñetas con títulos precisos, descripcione
       isSynthesizedFallback: true,
       timestamp: new Date().toISOString(),
     });
+    return;
   }
 });
 
@@ -150,7 +153,8 @@ app.post('/api/alternative-resource', async (req, res) => {
 
   try {
     if (!cleanTopic) {
-      return res.status(400).json({ error: 'Faltan parámetros.' });
+      res.status(400).json({ error: 'Faltan parámetros.' });
+      return;
     }
 
     if (!ai) {
@@ -178,6 +182,7 @@ Formato de salida estricto (solo 1 elemento):
       rawItem: response.text || '',
       resourceIndex,
     });
+    return;
   } catch (error: any) {
     console.warn('Alternative resource generation using fallback:', error.message);
     const altItem = generateSingleAlternativeFallback(cleanTopic, currentTitle, resourceType);
@@ -186,15 +191,16 @@ Formato de salida estricto (solo 1 elemento):
       resourceIndex,
       isSynthesizedFallback: true,
     });
+    return;
   }
 });
 
 // Resilient Chemical Engineering Knowledge Generator
 function generatePedagogicalFallback(
   topic: string,
-  level: string,
-  preference: string,
-  language: string
+  _level: string,
+  _preference: string,
+  _language: string
 ) {
   const t = topic.toLowerCase();
   
@@ -336,7 +342,7 @@ function generatePedagogicalFallback(
   };
 }
 
-function generateSingleAlternativeFallback(topic: string, currentTitle: string, type: string) {
+function generateSingleAlternativeFallback(topic: string, _currentTitle: string, _type: string) {
   return `- **Alternative Chemical Engineering Resource for ${topic}**: Publicación técnica complementaria en Chemical Engineering Research and Design evaluando modelos cinéticos de parámetros distribuidos y balance de materia riguroso para la optimización de procesos en ${topic}.
   - Enlace: https://www.sciencedirect.com/journal/chemical-engineering-research-and-design`;
 }
@@ -356,7 +362,7 @@ async function startServer() {
     app.use(vite.middlewares);
   } else {
     app.use(express.static(path.resolve(__dirname, 'dist')));
-    app.get('*', (req, res) => {
+    app.get('*', (_req, res) => {
       res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
     });
   }

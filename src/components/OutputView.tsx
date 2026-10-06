@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { AcademicGuideResources, ChemicalResource } from '../types';
 import { ResourceCard } from './ResourceCard';
-import { formatToOfficialMarkdown, formatToLatex, formatGuideHeader } from '../utils/parser';
-import { Copy, Check, Download, Printer, FileText, Code, Eye, Share2, Sparkles, AlertCircle, RefreshCw, Layers } from 'lucide-react';
+import { formatToOfficialMarkdown, formatToLatex } from '../utils/parser';
+import { Copy, Check, Download, Printer, FileText, Code, Eye, Sparkles, AlertCircle, Layers } from 'lucide-react';
 
 interface OutputViewProps {
   data: AcademicGuideResources;
