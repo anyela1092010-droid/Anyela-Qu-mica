@@ -1,0 +1,6 @@
+{
+  "name": "Curador de Recursos de Actualidad - Ingeniería Química",
+  "description": "Plataforma pedagógica docente para la redacción y curaduría de recursos de actualidad científicos e industriales en guías de trabajo académico de Ingeniería Química.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
